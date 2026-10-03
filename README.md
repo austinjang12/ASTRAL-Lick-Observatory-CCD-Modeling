@@ -1,5 +1,4 @@
 # ASTRAL-Lick-Observatory-CCD-Modeling
-# Synthetic CCD Noise Simulation
 
 This project investigates how controlled synthetic CCD noise affects astronomical image data. The goal is to build a physically motivated noise model and study how different sources of detector noise alter an underlying astronomical signal.
 
@@ -16,9 +15,9 @@ The resulting image can then be compared directly with the original image to qua
 
 The simulated observed pixel value can be represented schematically as
 
-\[
+$$
 O = S + N_{\mathrm{shot}} + N_{\mathrm{dark}} + N_{\mathrm{read}},
-\]
+$$
 
 where \(S\) is the underlying signal and the remaining terms represent different detector-noise contributions.
 
@@ -26,21 +25,21 @@ where \(S\) is the underlying signal and the remaining terms represent different
 
 Photon-counting fluctuations are modeled using a Poisson distribution:
 
-\[
+$$
 O_{\mathrm{shot}} \sim \mathrm{Poisson}(S).
-\]
+$$
 
 The variance of a Poisson-distributed signal is equal to its mean,
 
-\[
+$$
 \mathrm{Var}(N_{\mathrm{shot}})=S.
-\]
+$$
 
 Consequently, the standard deviation scales as
 
-\[
+$$
 \sigma_{\mathrm{shot}}=\sqrt{S}.
-\]
+$$
 
 This means that brighter pixels have larger absolute fluctuations, while the relative noise decreases as the signal increases.
 
@@ -48,21 +47,21 @@ This means that brighter pixels have larger absolute fluctuations, while the rel
 
 Dark current is simulated as an additional Poisson-distributed contribution:
 
-\[
+$$
 N_{\mathrm{dark}}\sim\mathrm{Poisson}(\lambda_{\mathrm{dark}}),
-\]
+$$
 
-where \(\lambda_{\mathrm{dark}}\) represents the expected number of dark-current electrons per pixel for the simulated exposure.
+where $\(\lambda_{\mathrm{dark}}\)$ represents the expected number of dark-current electrons per pixel for the simulated exposure.
 
 ### Read Noise
 
 Electronic readout noise is modeled as Gaussian noise:
 
-\[
+$$
 N_{\mathrm{read}}\sim\mathcal{N}(0,\sigma_r^2),
-\]
+$$
 
-where \(\sigma_r\) is the assumed read-noise standard deviation.
+where $\(\sigma_r\)$ is the assumed read-noise standard deviation.
 
 Unlike Poisson noise, the Gaussian read-noise contribution is independent of the brightness of the pixel in this simplified model.
 
@@ -70,12 +69,12 @@ Unlike Poisson noise, the Gaussian read-noise contribution is independent of the
 
 A finite detector well depth is included by imposing a maximum measurable signal:
 
-\[
+$$
 O_{\mathrm{final}}=
 \min(O,O_{\mathrm{FW}}),
-\]
+$
 
-where \(O_{\mathrm{FW}}\) is the detector's full-well capacity.
+where $\(O_{\mathrm{FW}}\)$ is the detector's full-well capacity.
 
 This prevents simulated pixels from exceeding the maximum signal that the detector can record.
 
@@ -105,11 +104,11 @@ One purpose of using synthetic noise is that its parameters are known and contro
 
 For example, the simulation can be repeated for different values of:
 
-\[
+$$
 \sigma_r,\qquad
 \lambda_{\mathrm{dark}},\qquad
 O_{\mathrm{FW}},
-\]
+$$
 
 allowing the effect of increasing detector noise to be measured.
 

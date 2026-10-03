@@ -1,4 +1,4 @@
-# CCD Astrophysics — Synthetic CCD Noise Modeling
+# CCD Astrophysics — CCD Synthetic Noise Modeling
 
 A computational astrophysics project for testing astronomical source-detection performance using real CCD imaging data and synthetic star injection.
 

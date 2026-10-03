@@ -1,4 +1,4 @@
-# CCD Astrophysics — Injection-Recovery Source Detection
+# CCD Astrophysics — Synthetic CCD Noise Modeling
 
 A computational astrophysics project for testing astronomical source-detection performance using real CCD imaging data and synthetic star injection.
 

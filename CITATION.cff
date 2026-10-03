@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+title: "CCD Synthetic Nosie Modeling"
+message: "If you use this software in academic work, please cite this repository."
+type: software
+
+authors:
+  - family-names: "Jang"
+    given-names: "Austin"
+
+version: "1.0.0"
+date-released: 2026-10-02
+
+repository-code: "https://github.com/austinjang12/ASTRAL-Lick-Observatory-CCD-Modeling"
+license: "MIT"
